@@ -347,17 +347,21 @@
   [hidden] {
 	display: none;
   }
+
+  /* Custom properties */
 :root {
   --button-bgc : #FF6565;
   --white-color:  #FFFFFF;
   --text-font: 'Source Sans Pro';
 }
-
+  /* Body Text Font and color */
   body {
     font-family: var(--text-font);
     color: var(--white-color);
   }
 
+
+/* Header */
   .header {
     background-image: url("/images/headphones_hero_1.jpg");
     background-size: cover;
@@ -379,6 +383,10 @@
   }
 
 
+  .navbar .menu-icon {
+    visibility: hidden;
+  } 
+
   .navbar .nav-items-container {
     display: flex;
     justify-content: space-around;
@@ -386,6 +394,7 @@
   }
 
   .nav-items-container .nav-items {
+    margin-top: 1.8rem;
     margin-left: 2rem;
     cursor: pointer;
   }
@@ -443,15 +452,74 @@
 @media only screen and (max-width: 480px) {
   .header {
     background-position: 35% 65%;
-    height: 170vh;
+    height: 190vh;
   }
 
   .navbar {
-    flex-direction: row-reverse;
+    flex-direction: column;
+    align-items: center;
   }
+  
+  .navbar .logo {
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+
+
+  .navbar .idk  {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 10rem;
+  }
+  
+  .idk .menu-icon {
+    visibility: visible;
+    margin-top: 2.2rem;
+    margin-left: 4.5rem;
+    margin-right: 4rem
+  }
+
   .navbar .nav-items-container {
+    visibility: hidden;
+    flex-direction: column;
+
+  }
+
+
+  .menu-icon .ham {
+    width: 1.25rem;
+    height: 0.125rem;
+    background-color: var(--white-color);
+    margin: 0.25rem 0;
+  }
+
+  .menu-icon .ham.small {
+    width:0.813rem;
+  }
+  
+  #icon-btn {
+    visibility: hidden;
+  }
+
+  #icon-btn:checked ~ label .ham.first {
+
+    transform: rotate(45deg) translate(4px, 0);
+  }
+
+  #icon-btn:checked ~ label .ham.small {
     display: none;
   }
+ 
+  #icon-btn:checked ~ label .ham.second {
+    transform: rotate(-45deg) translate(4px, 0);
+  }
+
+  #icon-btn:checked ~ label > .nav-items-container{
+    visibility: visible;
+  }
+
+
 
   .header .hero-section {
     margin-top: 18rem;
@@ -459,23 +527,28 @@
     
   }
 
+
+
   .header .hero-header {
     font-size: 2rem;
     line-height: 2.5rem;
   }
 
   .hero-section .hero-small-header {
-    display: block;
     text-align: center;
     height: 2.5rem;
     width: 17.438rem;
   }
 
-
+  .hero-section .hero-header {
+    margin-top: 0;
+  }
   .hero-section .hero-paragraph {
     width: 20.938rem;
     line-height: 1.625rem;
   }
 
+
+  
 
 }
