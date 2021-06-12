@@ -370,38 +370,40 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-  }
-
-  .header .navbar {
-    display: flex;
     justify-content: space-around;
   }
 
   .header .logo {
-    margin-top: 1.5rem;
-    margin-left: 1.5rem;
+    margin-left: 8.5rem;
   }
 
-
-  .navbar .menu-icon {
+  #icon-btn {
     visibility: hidden;
   } 
+  .navbar{
+    display: flex;
+    justify-content: space-between;
+  }
 
+  /* later we change the flex-direction to column for mobile */
   .navbar .nav-items-container {
     display: flex;
-    justify-content: space-around;
     list-style-type: none;
+    margin-right: 8rem;
   }
 
   .nav-items-container .nav-items {
-    margin-top: 1.8rem;
     margin-left: 2rem;
     cursor: pointer;
   }
+
+
   .nav-items-container .nav-items:hover {
     color: var(--button-bgc);
   }
-
+  input#icon-btn {
+    display: none;
+  }
 .header .hero-section {
   margin-top: 19rem;
   display: flex;
@@ -456,75 +458,95 @@
   }
 
   .navbar {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column-reverse;
   }
-  
+
   .navbar .logo {
-    margin-top: 1.5rem;
+    margin-top: -5rem;
+    margin-left: 0;
+  }
+
+  .navbar label {
+    margin-bottom: -0.5rem;
     margin-left: 1.5rem;
-  }
-
-
-
-  .navbar .idk  {
-    display: flex;
-    justify-content: space-evenly;
-    margin-right: 10rem;
-  }
-  
-  .idk .menu-icon {
-    visibility: visible;
-    margin-top: 2.2rem;
-    margin-left: 4.5rem;
-    margin-right: 4rem
+    order: 1;
   }
 
   .navbar .nav-items-container {
-    visibility: hidden;
+    order: -1;
+    align-self: center;
+    margin-left: 8rem;
+    display: none;
+  }
+
+  .navbar div.nav-items-container
+  {
+    display: none;
+  }
+  
+  .navbar .nav-items {
+    margin-top: 2rem;
+  }
+
+  .navbar .logo {
+    align-self: center;
+    margin-top: -1.5rem;
+  }
+
+  .navbar #icon-btn {
+    visibility: visible;
+   
+
+  }
+
+  .navbar .nav-items-container {
+    display: flex;
     flex-direction: column;
 
   }
 
 
-  .menu-icon .ham {
+  label .ham {
     width: 1.25rem;
     height: 0.125rem;
     background-color: var(--white-color);
     margin: 0.25rem 0;
   }
 
-  .menu-icon .ham.small {
+  label .ham.small {
     width:0.813rem;
   }
   
-  #icon-btn {
-    visibility: hidden;
+
+
+
+  input#icon-btn {
+    display: none;
   }
 
   #icon-btn:checked ~ label .ham.first {
 
-    transform: rotate(45deg) translate(4px, 0);
+    transform: rotate(45deg) translate(4px, 4px);
+    transition: transform 150ms ease;
   }
 
   #icon-btn:checked ~ label .ham.small {
-    display: none;
+    transform: scaleX(0);
+    transition: transform 150ms ease;
   }
  
   #icon-btn:checked ~ label .ham.second {
-    transform: rotate(-45deg) translate(4px, 0);
+    transform: rotate(-45deg) translate(4px, -4px);
+    transition: transform 150ms ease;
   }
 
-  #icon-btn:checked ~ label > .nav-items-container{
-    visibility: visible;
+  #icon-btn:checked ~ label ~ div.nav-items-container {
+    display: flex;
   }
-
-
 
   .header .hero-section {
-    margin-top: 18rem;
-    text-align: center;
-    
+    margin-top: 11rem;
+    text-align: center; 
   }
 
 
