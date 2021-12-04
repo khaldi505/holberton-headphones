@@ -6,12 +6,10 @@
 
 ### Description
 - This project is part of Holberton School Front-end curriculum
-- In this project Figma will be your bestfriend beside google of course :)
-- observing from a Figma design, i'm supposed to match this [result](###Screenshots From the final result) 
+- In this project Figma will be your bestfriend beside google of course :) 
 - made the HTML structure with accessibility in mind and some basic SEO
 - Add style to the website to match the expected result and to be responsive on any screen size (mobile, tab, desktop) using only CSS
 - this project is using an opensource normalize CSS sheet, to get the expected result as close as possible on every browser.
-- the images are in the images folder in the root of this dict
 
 ### Requirements
 - you are not allowed to import external CSS framework (like Bootstrap)
